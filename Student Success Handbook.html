@@ -1,0 +1,1717 @@
+<p>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+</p>
+<style>
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box; margin: 0; padding: 0;
+	}
+	
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		font-family: Montserrat, Arial, sans-serif; color: #111111; background: #ffffff; font-size: 17px; line-height: 1.6;
+	}
+	/* ── STICKY NAV ── */
+	
+	.top-nav {
+		background: #222222; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
+	}
+	
+	.top-nav ul {
+		display: inline-flex; list-style: none; padding: 0 18px; margin: 0; gap: 0;
+	}
+	
+	.top-nav ul li a {
+		display: block; padding: 14px 16px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.65); text-decoration: none; border-bottom: 3px solid transparent; transition: color .2s, border-color .2s;
+	}
+	
+	.top-nav ul li a:hover,
+	.top-nav ul li a.active {
+		color: #ffffff; border-bottom-color: #bb0000;
+	}
+	/* ── LAYOUT ── */
+	
+	.page-wrap {
+		max-width: 1100px; margin: 0 auto; padding: 28px 18px 48px;
+	}
+	
+	.guide-section {
+		margin-bottom: 32px;
+	}
+	
+	hr.divider {
+		border: none; border-top: 1px solid #d9dde3; margin: 28px 0;
+	}
+	/* ── HERO ── */
+	
+	.hero-box {
+		background: #f7f7f7; border: 1px solid #d9dde3; border-radius: 18px; padding: 28px; margin-bottom: 28px;
+	}
+	
+	.hero-eyebrow {
+		font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 8px 0;
+	}
+	
+	.hero-box h1 {
+		font-size: clamp(28px, 5vw, 44px); line-height: 1.15; color: #000000; margin: 0 0 14px 0; font-weight: 900;
+	}
+	
+	.hero-box p {
+		font-size: 18px; line-height: 1.65; margin: 0 0 12px 0;
+	}
+	
+	.hero-box p:last-child {
+		margin: 0;
+	}
+	/* ── SECTION HEADINGS ── */
+	
+	.section-eyebrow {
+		font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #bb0000; font-weight: 800; margin: 0 0 6px 0;
+	}
+	
+	.section-h2 {
+		font-size: 30px; line-height: 1.2; color: #000000; margin: 0 0 10px 0; font-weight: 900;
+	}
+	
+	.section-lead {
+		font-size: 18px; line-height: 1.65; color: #222222; margin: 0 0 18px 0;
+	}
+	/* ── CARDS ── */
+	/* Standard accent card — left red border, used everywhere */
+	
+	.accent-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 18px;
+	}
+	
+	.accent-card h3 {
+		font-size: 20px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900;
+	}
+	
+	.accent-card h4 {
+		font-size: 18px; line-height: 1.25; margin: 0 0 8px 0; color: #000000; font-weight: 900;
+	}
+	
+	.accent-card p {
+		font-size: 17px; line-height: 1.55; margin: 0; color: #333333;
+	}
+	
+	.card-grid {
+		display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+	}
+	/* ── PANELS ── */
+	
+	.white-panel {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 14px; padding: 20px;
+	}
+	
+	.white-panel p {
+		font-size: 17px; line-height: 1.65; margin: 0 0 14px 0;
+	}
+	
+	.white-panel p:last-child {
+		margin: 0;
+	}
+	
+	.gray-panel {
+		background: #f7f7f7; border: 1px solid #d9dde3; border-radius: 18px; padding: 24px;
+	}
+	/* Callout — white card with red left border, label + body */
+	
+	.callout {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 18px; margin-bottom: 14px;
+	}
+	
+	.callout-label {
+		font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px;
+	}
+	
+	.callout p {
+		font-size: 17px; line-height: 1.6; color: #222222; margin: 0;
+	}
+	
+	.callout strong {
+		color: #000000;
+	}
+	/* ── CHECKLIST ── */
+	
+	.checklist-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 20px;
+	}
+	
+	.check-item {
+		display: flex; gap: 12px; align-items: flex-start; padding: 0 0 14px 0; margin: 0 0 14px 0; border-bottom: 1px solid #e3e6ea;
+	}
+	
+	.check-item:last-child {
+		padding: 0; margin: 0; border-bottom: none;
+	}
+	
+	.check-box {
+		min-width: 28px; height: 28px; border: 2px solid #bb0000; border-radius: 6px; text-align: center; line-height: 24px; font-size: 17px; font-weight: 900; color: #bb0000; flex-shrink: 0;
+	}
+	
+	.check-item p {
+		font-size: 17px; line-height: 1.5; margin: 0; color: #222222;
+	}
+	
+	.check-item strong {
+		color: #000000;
+	}
+	
+	.check-item span {
+		font-size: 15px; color: #555555; display: block; margin-top: 2px;
+	}
+	/* ── NUMBERED STEPS ── */
+	
+	.steps-list {
+		display: flex; flex-direction: column; gap: 14px;
+	}
+	
+	.step-row {
+		display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start;
+	}
+	
+	.step-num {
+		width: 44px; height: 44px; border-radius: 10px; background: #bb0000; color: #ffffff; font-size: 20px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+	}
+	
+	.step-body strong {
+		display: block; font-size: 18px; font-weight: 900; color: #000000; margin-bottom: 4px;
+	}
+	
+	.step-body p {
+		font-size: 17px; line-height: 1.55; color: #444444; margin: 0;
+	}
+	/* ── ACCORDION ── (one style, used everywhere) */
+	
+	.accordion-wrap {
+		display: flex; flex-direction: column; gap: 12px;
+	}
+	
+	details {
+		border: 1px solid #d9dde3; border-radius: 12px; background: #ffffff; overflow: hidden;
+	}
+	
+	details summary {
+		background: #222222; color: #ffffff; font-size: 18px; font-weight: 800; padding: 16px 18px; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; font-family: Montserrat, Arial, sans-serif;
+	}
+	
+	details summary::-webkit-details-marker {
+		display: none;
+	}
+	
+	details summary::after {
+		content: '+'; font-size: 22px; font-weight: 400; color: rgba(255, 255, 255, 0.6); margin-left: 12px; flex-shrink: 0;
+	}
+	
+	details[open] summary::after {
+		content: '−';
+	}
+	
+	details summary:hover {
+		background: #333333;
+	}
+	
+	.accordion-body {
+		padding: 20px 18px; background: #f7f7f7; border-top: 1px solid #d9dde3;
+	}
+	
+	.accordion-body p {
+		font-size: 17px; line-height: 1.6; margin: 0 0 12px 0;
+	}
+	
+	.accordion-body p:last-child {
+		margin: 0;
+	}
+	/* Nested accordion — slightly different treatment so it reads as secondary */
+	
+	.nested-accordion {
+		display: flex; flex-direction: column; gap: 10px; margin-top: 14px;
+	}
+	
+	.nested-accordion details {
+		border: 1px solid #d9dde3; border-radius: 10px; background: #ffffff; overflow: hidden;
+	}
+	
+	.nested-accordion details summary {
+		background: #ffffff; color: #000000; font-size: 17px; font-weight: 800; padding: 14px 18px; border-left: 6px solid #bb0000; border-radius: 10px;
+	}
+	
+	.nested-accordion details[open] summary {
+		border-radius: 10px 10px 0 0; background: #fff5f5; color: #bb0000;
+	}
+	
+	.nested-accordion details summary::after {
+		color: #bb0000;
+	}
+	
+	.nested-accordion details summary:hover {
+		background: #f7f7f7;
+	}
+	
+	.nested-accordion .nested-body {
+		padding: 16px 18px; background: #f7f7f7; border-top: 1px solid #d9dde3; font-size: 17px; line-height: 1.6; color: #333333;
+	}
+	/* ── SUCCESS STRATEGY CARDS ── (same accent-card style, smaller font for grid) */
+	
+	.ss-cards {
+		display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 14px;
+	}
+	
+	.ss-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px;
+	}
+	
+	.ss-tag {
+		display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #bb0000; background: #fde8e8; padding: 3px 9px; border-radius: 999px; margin-bottom: 8px;
+	}
+	
+	.ss-card h4 {
+		font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 6px 0;
+	}
+	
+	.ss-card p {
+		font-size: 17px; color: #444444; line-height: 1.55; margin: 0;
+	}
+	
+	.ss-example {
+		margin-top: 10px; background: #f7f7f7; border: 1px solid #d9dde3; border-radius: 8px; padding: 8px 12px; font-size: 15px; color: #444444; font-style: italic;
+	}
+	
+	.ss-example::before {
+		content: '→ '; color: #bb0000; font-style: normal; font-weight: 800;
+	}
+	/* Numbered steps inside success strategies */
+	
+	.ss-steps {
+		display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
+	}
+	
+	.ss-step {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px 16px; display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start;
+	}
+	
+	.ss-step-num {
+		width: 36px; height: 36px; border-radius: 50%; background: #bb0000; color: #ffffff; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+	}
+	
+	.ss-step-body strong {
+		display: block; font-size: 17px; font-weight: 900; color: #000000; margin-bottom: 3px;
+	}
+	
+	.ss-step-body p {
+		font-size: 17px; color: #444444; line-height: 1.55; margin: 0;
+	}
+	/* Distraction sub-tabs */
+	
+	.ss-sub-tabs {
+		display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;
+	}
+	
+	.ss-sub-tab {
+		padding: 7px 16px; background: #ffffff; border: 1px solid #d9dde3; border-radius: 999px; font-family: Montserrat, Arial, sans-serif; font-size: 13px; font-weight: 800; color: #555555; cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+	}
+	
+	.ss-sub-tab:hover {
+		border-color: #bb0000; color: #bb0000;
+	}
+	
+	.ss-sub-tab.ss-active {
+		background: #bb0000; color: #ffffff; border-color: #bb0000;
+	}
+	
+	.ss-sub-panel {
+		display: none;
+	}
+	
+	.ss-sub-panel.ss-active {
+		display: block;
+	}
+	
+	.ss-sub-panel ul {
+		list-style: none; display: flex; flex-direction: column; gap: 8px; padding: 0; margin: 0;
+	}
+	
+	.ss-sub-panel ul li {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 10px; padding: 11px 14px 11px 38px; font-size: 17px; color: #333333; line-height: 1.55; position: relative;
+	}
+	
+	.ss-sub-panel ul li::before {
+		content: '▸'; color: #bb0000; position: absolute; left: 14px; font-size: 14px; top: 14px;
+	}
+	/* PVR and assignment grids */
+	
+	.ss-pvr {
+		display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;
+	}
+	
+	.ss-pvr-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 16px; text-align: center;
+	}
+	
+	.ss-pvr-letter {
+		font-size: 32px; font-weight: 900; line-height: 1;
+	}
+	
+	.ss-pvr-card:nth-child(1) .ss-pvr-letter {
+		color: #bb0000;
+	}
+	
+	.ss-pvr-card:nth-child(2) .ss-pvr-letter {
+		color: #299393;
+	}
+	
+	.ss-pvr-card:nth-child(3) .ss-pvr-letter {
+		color: #000000;
+	}
+	
+	.ss-pvr-word {
+		font-size: 15px; font-weight: 900; color: #000000; margin: 4px 0 6px;
+	}
+	
+	.ss-pvr-desc {
+		font-size: 15px; color: #444444; line-height: 1.5; margin: 0;
+	}
+	
+	.ss-assign {
+		display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;
+	}
+	
+	.ss-assign-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 12px; padding: 14px; text-align: center;
+	}
+	
+	.ss-assign-icon {
+		font-size: 24px; margin-bottom: 6px;
+	}
+	
+	.ss-assign-card strong {
+		display: block; font-size: 17px; font-weight: 900; color: #000000; margin-bottom: 4px;
+	}
+	
+	.ss-assign-card p {
+		font-size: 15px; color: #444444; line-height: 1.5; margin: 0;
+	}
+	/* ── SUPPORT SECTION ── */
+	
+	.support-card {
+		background: #ffffff; border: 1px solid #d9dde3; border-radius: 14px; padding: 24px; margin-bottom: 16px;
+	}
+	
+	.support-card:last-of-type {
+		margin-bottom: 0;
+	}
+	
+	.support-badge {
+		display: inline-block; background: #bb0000; color: #ffffff; font-size: 13px; font-weight: 800; padding: 6px 14px; border-radius: 999px; margin-bottom: 12px;
+	}
+	
+	.support-card h3 {
+		font-size: 24px; font-weight: 900; color: #000000; margin: 0 0 8px 0; line-height: 1.2;
+	}
+	
+	.support-card > p {
+		font-size: 17px; line-height: 1.6; margin: 0 0 14px 0; color: #222222;
+	}
+	
+	.support-list-box {
+		background: #f7f7f7; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 12px; padding: 16px 20px;
+	}
+	
+	.support-list-box h4 {
+		font-size: 18px; font-weight: 900; color: #000000; margin: 0 0 10px 0;
+	}
+	
+	.support-list-box ul {
+		margin: 0; padding-left: 22px; font-size: 17px; line-height: 1.85; color: #222222;
+	}
+	/* ── QUIZ ── */
+	
+	.quiz-embed-wrap {
+		background: #f7f7f7; border: 1px solid #d9dde3; border-radius: 18px; padding: 24px;
+	}
+	
+	.quiz-progress-label {
+		display: flex; justify-content: space-between; font-size: 12px; color: #888888; font-weight: 800; margin-bottom: 6px;
+	}
+	
+	.quiz-progress-bar {
+		height: 5px; background: #d9dde3; border-radius: 999px;
+	}
+	
+	.quiz-progress-fill {
+		height: 100%; background: #bb0000; border-radius: 999px; transition: width .4s ease; width: 0%;
+	}
+	
+	.quiz-dots {
+		display: flex; gap: 6px; justify-content: center; padding: 10px 0 0;
+	}
+	
+	.quiz-dot {
+		width: 9px; height: 9px; border-radius: 50%; background: #d9dde3; transition: background .3s;
+	}
+	
+	.quiz-dot.answered {
+		background: #bb0000;
+	}
+	
+	.quiz-dot.current {
+		background: #555555;
+	}
+	
+	.quiz-cat-header {
+		background: #222222; border-radius: 12px; padding: 18px 20px; margin: 14px 0 0;
+	}
+	
+	.quiz-cat-eyebrow {
+		font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); margin-bottom: 4px;
+	}
+	
+	.quiz-cat-num {
+		font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #bb0000; margin-bottom: 4px;
+	}
+	
+	.quiz-cat-title {
+		font-size: 22px; font-weight: 900; color: #ffffff; line-height: 1.2;
+	}
+	
+	.quiz-cat-desc {
+		font-size: 15px; color: rgba(255, 255, 255, 0.6); margin-top: 4px; line-height: 1.5;
+	}
+	
+	.quiz-question {
+		font-size: 17px; font-style: italic; color: #333333; line-height: 1.65; margin: 16px 0 12px;
+	}
+	
+	.quiz-options {
+		display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;
+	}
+	
+	.quiz-option {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 5px solid #d9dde3; border-radius: 12px; padding: 14px 16px; cursor: pointer; font-family: Montserrat, Arial, sans-serif; font-size: 17px; line-height: 1.55; color: #333333; text-align: left; width: 100%; transition: border-color .2s, border-left-color .2s, background .2s;
+	}
+	
+	.quiz-option:hover {
+		border-color: #aaaaaa; border-left-color: #aaaaaa; background: #f7f7f7;
+	}
+	
+	.quiz-option.selected {
+		border-color: #bb0000; border-left-color: #bb0000; background: #fff5f5; color: #000000; font-weight: 600;
+	}
+	
+	.quiz-nav-row {
+		display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid #d9dde3; gap: 10px;
+	}
+	
+	.q-btn {
+		font-family: Montserrat, Arial, sans-serif; font-size: 15px; font-weight: 800; padding: 10px 22px; border-radius: 999px; border: none; cursor: pointer; transition: opacity .2s, transform .15s;
+	}
+	
+	.q-btn:hover:not(:disabled) {
+		opacity: .88; transform: translateY(-1px);
+	}
+	
+	.q-btn:disabled {
+		opacity: .3; cursor: not-allowed;
+	}
+	
+	.q-btn-prev {
+		background: #ffffff; color: #222222; border: 2px solid #d9dde3 !important;
+	}
+	
+	.q-btn-next {
+		background: #bb0000; color: #ffffff;
+	}
+	
+	.q-btn-finish {
+		background: #222222; color: #ffffff;
+	}
+	
+	.q-skip {
+		font-size: 13px; color: #aaaaaa; text-decoration: underline; cursor: pointer; background: none; border: none; font-family: Montserrat, Arial, sans-serif;
+	}
+	
+	.q-skip:hover {
+		color: #666666;
+	}
+	
+	.quiz-results {
+		display: none; margin-top: 16px;
+	}
+	
+	.result-band {
+		border-radius: 14px; padding: 24px; text-align: center; margin-bottom: 20px;
+	}
+	
+	.result-band.not-ready {
+		background: #fde8e8; border: 2px solid #f5c1c1;
+	}
+	
+	.result-band.almost {
+		background: #fff8e8; border: 2px solid #e8d48a;
+	}
+	
+	.result-band.getting-there {
+		background: #e3f2fd; border: 2px solid #90caf9;
+	}
+	
+	.result-band.ready {
+		background: #e8f5e9; border: 2px solid #a5d6a7;
+	}
+	
+	.result-score {
+		font-size: 52px; font-weight: 900; line-height: 1; margin-bottom: 4px;
+	}
+	
+	.result-band.not-ready .result-score {
+		color: #991A1E;
+	}
+	
+	.result-band.almost .result-score {
+		color: #7a4500;
+	}
+	
+	.result-band.getting-there .result-score {
+		color: #1565c0;
+	}
+	
+	.result-band.ready .result-score {
+		color: #2e7d32;
+	}
+	
+	.result-label {
+		font-size: 22px; font-weight: 900; margin-bottom: 8px;
+	}
+	
+	.result-desc {
+		font-size: 17px; line-height: 1.6; color: #444444; max-width: 480px; margin: 0 auto;
+	}
+	
+	.breakdown-title {
+		font-size: 20px; font-weight: 900; color: #000000; margin: 0 0 12px;
+	}
+	
+	.breakdown-row {
+		display: grid; grid-template-columns: 150px 1fr auto; align-items: center; gap: 12px; background: #ffffff; border: 1px solid #d9dde3; border-radius: 10px; padding: 10px 14px; margin-bottom: 8px;
+	}
+	
+	.breakdown-cat {
+		font-size: 14px; font-weight: 800; color: #000000;
+	}
+	
+	.bar-bg {
+		background: #d9dde3; border-radius: 999px; height: 10px; overflow: hidden;
+	}
+	
+	.bar-fill {
+		height: 100%; border-radius: 999px; transition: width .6s ease;
+	}
+	
+	.fill-1 {
+		background: #E24B4A;
+	}
+	
+	.fill-2 {
+		background: #c8830a;
+	}
+	
+	.fill-3 {
+		background: #378ADD;
+	}
+	
+	.fill-4 {
+		background: #3aaa3a;
+	}
+	
+	.breakdown-lbl {
+		font-size: 13px; font-weight: 800; white-space: nowrap;
+	}
+	
+	.lbl-1 {
+		color: #991A1E;
+	}
+	
+	.lbl-2 {
+		color: #7a4500;
+	}
+	
+	.lbl-3 {
+		color: #1565c0;
+	}
+	
+	.lbl-4 {
+		color: #2e7d32;
+	}
+	
+	.result-tip {
+		background: #ffffff; border: 1px solid #d9dde3; border-left: 6px solid #bb0000; border-radius: 14px; padding: 18px 20px; margin-top: 16px;
+	}
+	
+	.result-tip-label {
+		font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #bb0000; margin-bottom: 6px;
+	}
+	
+	.result-tip p {
+		font-size: 17px; line-height: 1.6; color: #333333; margin: 0;
+	}
+	
+	.retake-btn {
+		display: block; width: fit-content; margin: 18px auto 0; background: #bb0000; color: #ffffff; font-family: Montserrat, Arial, sans-serif; font-size: 15px; font-weight: 800; padding: 11px 28px; border-radius: 999px; border: none; cursor: pointer; transition: opacity .2s;
+	}
+	
+	.retake-btn:hover {
+		opacity: .88;
+	}
+	/* ── FOOTER ── */
+	
+	.page-footer {
+		border-top: 1px solid #d9dde3; margin-top: 8px; padding-top: 24px; text-align: center;
+	}
+	
+	.page-footer .tagline {
+		font-size: 20px; font-weight: 900; color: #c8c7c7; letter-spacing: .06em;
+	}
+	/* ── RESPONSIVE ── */
+	
+	@media (max-width: 600px) {
+		.ss-pvr,
+		.ss-assign,
+		.ss-cards {
+			grid-template-columns: 1fr;
+		}
+		.ss-step {
+			grid-template-columns: 1fr;
+		}
+		.ss-step-num {
+			display: none;
+		}
+		.breakdown-row {
+			grid-template-columns: 100px 1fr auto;
+		}
+	}
+
+</style>
+<div class="page-wrap">
+	<!-- HERO -->
+	<div class="hero-box" id="about">
+
+		<p class="hero-eyebrow">Student Resource Guide</p>
+
+		<h1>Student Guide to Online Learning</h1>
+
+		<p>Everything you need to know before, during, and after your CVA course. This guide will help you make a confident, informed decision and set you up for success from day one.</p>
+	</div>
+	<!-- WHAT IS ONLINE LEARNING -->
+	<div class="guide-section" id="what-is">
+
+		<p class="section-eyebrow">The Basics</p>
+
+		<h2 class="section-h2">What Is Online Learning?</h2>
+
+		<p class="section-lead">Online learning at CVA means taking rigorous, credit-bearing courses through a digital platform&mdash;from anywhere in Cobb County and beyond. It&#39;s the same rigor as a traditional class, just a different environment.</p>
+		<div class="card-grid" style="margin-bottom:16px;">
+			<div class="accent-card">
+
+				<h3>Full-Time Learners</h3>
+
+				<p>Take all of your courses virtually through CVA. Your entire school experience happens online, but you&#39;re still a part of your school&#39;s community.</p>
+			</div>
+			<div class="accent-card">
+
+				<h3>Part-Time Learners</h3>
+
+				<p>Add one or more online courses to your regular in-person schedule to expand your options, while staying connected to your home school.</p>
+			</div>
+			<div class="accent-card">
+
+				<h3>Summer Learners</h3>
+
+				<p>Recover credits, get ahead, or prepare for the SAT during the summer without a physical campus.</p>
+			</div></div>
+		<div class="white-panel">
+
+			<p><strong>Common Misconception:</strong> Many students assume online courses are easier than in-person classes. <strong>They&#39;re not.</strong> A well-designed CVA course covers the same content and expectations as any face-to-face class. <strong>The difference is <em>where and how</em> you learn&mdash;not how much is expected of you.</strong></p>
+		</div></div>
+	<hr class="divider">
+	<!-- WHY CVA -->
+	<div class="guide-section" id="why">
+
+		<p class="section-eyebrow">Motivation Matters</p>
+
+		<h2 class="section-h2">Why Students Choose CVA</h2>
+
+		<p class="section-lead">Research shows students succeed most when their motivation is genuine and tied to a real goal. Here are the top reasons students choose virtual learning.</p>
+		<div class="steps-list">
+			<div class="step-row">
+				<div class="step-num">1</div>
+				<div class="step-body"><strong>Personalized to my goals</strong>
+
+					<p>When you choose your own courses, you take greater ownership of your learning journey and outcomes.</p>
+				</div></div>
+			<div class="step-row">
+				<div class="step-num">2</div>
+				<div class="step-body"><strong>Flexible scheduling</strong>
+
+					<p>Online learning can accommodate athletic schedules, health schedules, jobs, family responsibilities, and more.</p>
+				</div></div>
+			<div class="step-row">
+				<div class="step-num">3</div>
+				<div class="step-body"><strong>Engaging and interactive</strong>
+
+					<p>Multimedia tools, discussion boards, and digital resources bring learning to life in new ways.</p>
+				</div></div>
+			<div class="step-row">
+				<div class="step-num">4</div>
+				<div class="step-body"><strong>Relevant 21st-century skills</strong>
+
+					<p>You&#39;ll gain experience with the technology tools used in college, careers, and everyday life.</p>
+				</div></div>
+			<div class="step-row">
+				<div class="step-num">5</div>
+				<div class="step-body"><strong>Self-paced progress</strong>
+
+					<p>Move faster or slower through material based on your mastery.</p>
+				</div></div>
+			<div class="step-row">
+				<div class="step-num">6</div>
+				<div class="step-body"><strong>Available to every student equally</strong>
+
+					<p>Your zip code shouldn&#39;t limit your learning options. CVA opens doors to courses not offered at every home school.</p>
+				</div></div></div></div>
+	<hr class="divider">
+	<!-- READINESS ASSESSMENT -->
+	<div class="guide-section" id="readiness">
+
+		<p class="section-eyebrow">Self-Assessment</p>
+
+		<h2 class="section-h2">Are You Ready?</h2>
+
+		<p class="section-lead">Work through each of the 8 readiness categories below. Choose the statement that best describes you right now. Your results will show where you&#39;re strong and where you might want to prepare a bit more before enrolling.</p>
+		<div class="quiz-embed-wrap">
+			<div class="quiz-progress-label"><span id="progressText">Category 1 of 8</span> <span id="progressPct">0% complete</span></div>
+			<div class="quiz-progress-bar">
+				<div class="quiz-progress-fill" id="progressFill">
+					<br>
+				</div></div>
+			<div class="quiz-dots" id="quizDots">
+				<br>
+			</div>
+			<div class="quiz-cat-header" id="catHeader">
+				<div class="quiz-cat-eyebrow">Readiness Category</div>
+				<div class="quiz-cat-num" id="catNumber">
+					<br>
+				</div>
+				<div class="quiz-cat-title" id="catTitle">
+					<br>
+				</div>
+				<div class="quiz-cat-desc" id="catDesc">
+					<br>
+				</div></div>
+
+			<p class="quiz-question" id="questionText">
+				<br>
+			</p>
+			<div class="quiz-options" id="optionsContainer">
+				<br>
+			</div>
+			<div class="quiz-nav-row">
+				<button class="q-btn q-btn-prev" id="btnPrev" disabled="">&larr; Back</button>
+				<button class="q-skip" id="btnSkip">Skip for now</button>
+				<button class="q-btn q-btn-next" id="btnNext" disabled="">Next &rarr;</button>
+				<button class="q-btn q-btn-finish" id="btnFinish" style="display:none;">See My Results &rarr;</button>
+			</div>
+			<div class="quiz-results" id="quizResults">
+				<div class="result-band" id="resultsBand">
+					<div class="result-score" id="resultsScoreNum">
+						<br>
+					</div>
+					<div class="result-label" id="resultsLabel">
+						<br>
+					</div>
+
+					<p class="result-desc" id="resultsDesc">
+						<br>
+					</p>
+				</div>
+
+				<p class="breakdown-title">Your Score by Category</p>
+				<div id="breakdownGrid">
+					<br>
+				</div>
+				<div class="result-tip" id="resultsTip">
+					<div class="result-tip-label" id="resultsTipLabel">Next Steps</div>
+
+					<p id="resultsTipText">
+						<br>
+					</p>
+				</div>
+				<button class="retake-btn" id="btnRetake">↺ Retake Assessment</button>
+			</div></div></div>
+	<hr class="divider">
+	<!-- BEFORE YOU ENROLL -->
+	<div class="guide-section" id="consider">
+
+		<p class="section-eyebrow">Decision Checklist</p>
+
+		<h2 class="section-h2">Before You Enroll</h2>
+
+		<p class="section-lead">Talk with your parent or guardian and your school counselor, and ask yourself these questions before you commit.</p>
+		<div class="gray-panel">
+			<div class="checklist-card">
+				<div class="check-item">
+					<div class="check-box">✓</div>
+
+					<p><strong>What is my reason for taking the class online?</strong><span>Students who care about the subject matter or want to be successful stay motivated when things get difficult.</span></p>
+				</div>
+				<div class="check-item">
+					<div class="check-box">✓</div>
+
+					<p><strong>Can I fit in 1&ndash;2 hours per day for this course?</strong><span>Consider your other classes, extracurriculars, work schedule, and family commitments.</span></p>
+				</div>
+				<div class="check-item">
+					<div class="check-box">✓</div>
+
+					<p><strong>Where will I work? At school or at home?</strong><span>You need a consistent, distraction-free workspace. Know your plan before your first assignment.</span></p>
+				</div>
+				<div class="check-item">
+					<div class="check-box">✓</div>
+
+					<p><strong>Do I have reliable technology and internet access?</strong><span>A working device and stable connection are non-negotiable. Contact your counselor or media specialist if you need support.</span></p>
+				</div></div></div></div>
+	<hr class="divider">
+	<!-- SUCCESS STRATEGIES -->
+	<div class="guide-section" id="strategies">
+
+		<p class="section-eyebrow">Study Skills</p>
+
+		<h2 class="section-h2">Success Strategies</h2>
+
+		<p class="section-lead">Online learning puts you in the driver&#39;s seat &mdash; which means time management, organization, and focus are all on you. Open a topic below to explore proven strategies that will help you stay on track.</p>
+		<div class="accordion-wrap">
+			<!-- 1. MANAGING YOUR TIME -->
+			<details>
+				<summary>Managing Your Time</summary>
+				<div class="accordion-body">
+
+					<h2 style="font-size:26px; color:#bb0000; margin:0 0 8px 0; font-weight:900;">Managing Your Time</h2>
+
+					<p>One of the biggest differences between a traditional class and an online class is how time works. In a traditional school day, bells, teachers, and class periods help structure your learning. In an online class, <strong>you help create that structure yourself</strong>.</p>
+					<div class="callout" style="margin-top:14px;">
+						<div class="callout-label">Big Idea</div>
+
+						<p>Successful online students do not just &quot;find time&quot; to do schoolwork. They make a plan, follow a routine, and stay aware of deadlines. Set aside <strong>at least 2 hours per day or 8&ndash;10 hours per week</strong> for your course, in blocks of at least 1 hour. Fifteen-minute bursts between other activities won&#39;t lead to success.</p>
+					</div>
+
+					<h3 style="font-size:22px; color:#000000; margin:20px 0 10px 0; font-weight:900;">Three Simple Ways to Stay on Track</h3>
+
+					<p style="margin-bottom:16px;">These habits can make a big difference in an online class.</p>
+					<div class="ss-cards">
+						<div class="ss-card">
+
+							<h4>Check In Daily</h4>
+
+							<p>Log into your course every day or on a consistent schedule so you do not miss announcements, assignments, or feedback.</p>
+						</div>
+						<div class="ss-card">
+
+							<h4>Start Early</h4>
+
+							<p>Waiting until the last minute creates stress. Starting early gives you time to think, revise, and ask questions.</p>
+						</div>
+						<div class="ss-card">
+
+							<h4>Use a Plan</h4>
+
+							<p>A planner, calendar, checklist, or reminder app can help you keep track of deadlines and stay organized.</p>
+						</div></div>
+					<div class="callout">
+						<div class="callout-label">Create a Weekly Routine</div>
+
+						<p>Click each item below to explore simple steps that can help you build a routine for online learning.</p>
+					</div>
+					<div class="nested-accordion">
+						<details>
+							<summary>Check the Class Schedule</summary>
+							<div class="nested-body">Start the week by reviewing announcements and looking at upcoming assignments on the Class Schedule. Knowing what is due helps you make a realistic plan. <strong>Check the Class Schedule first to make your weekly plan.</strong></div>
+						</details>
+						<details>
+							<summary>Choose your work times</summary>
+							<div class="nested-body">Set aside specific times during the week to work on your class. A consistent routine helps prevent assignments from piling up.</div>
+						</details>
+						<details>
+							<summary>Spread work across the week</summary>
+							<div class="nested-body">Instead of doing everything in one sitting, work on assignments a little at a time. Smaller chunks of work can feel more manageable.</div>
+						</details>
+						<details>
+							<summary>Leave room for questions</summary>
+							<div class="nested-body">Starting work early gives you time to ask your teacher for help if something is confusing.</div>
+						</details>
+						<details>
+							<summary>Review your progress</summary>
+							<div class="nested-body">At the end of the week, take a moment to reflect on what worked well and what you might change next week.</div>
+						</details>
+					</div></div>
+			</details>
+			<!-- 2. PRIORITIZE -->
+			<details>
+				<summary>Prioritize</summary>
+				<div class="accordion-body">
+					<div class="callout">
+						<div class="callout-label">The Real Truth About Flexibility</div>
+
+						<p>Online learning is flexible, but that doesn&#39;t mean you should only work on it when nothing else is going on. You have to <em>make</em> the time by making your course a true priority.</p>
+					</div>
+					<div class="ss-steps">
+						<div class="ss-step">
+							<div class="ss-step-num">1</div>
+							<div class="ss-step-body"><strong>Prepare &mdash; Ask the Hard Questions Early</strong>
+
+								<p>Before your course begins, ask yourself whether you&#39;ll need to give something up to make room for it. Know this upfront &mdash; it prevents nasty surprises mid-semester.</p>
+							</div></div>
+						<div class="ss-step">
+							<div class="ss-step-num">2</div>
+							<div class="ss-step-body"><strong>Rank All Your Obligations (1&ndash;3)</strong>
+
+								<p>Rate every commitment as a&nbsp;<strong>1</strong> (must do),&nbsp;<strong>2</strong> (should do), or&nbsp;<strong>3</strong> (low priority).&nbsp;<strong>Your CVA course should always be a 1.</strong></p>
+							</div></div>
+						<div class="ss-step">
+							<div class="ss-step-num">3</div>
+							<div class="ss-step-body"><strong>Track Your Time with an Activity Log</strong>
+
+								<p>For a few days, write down how you spend each hour. Most students are surprised how much time disappears into low-priority activities.</p>
+							</div></div>
+						<div class="ss-step">
+							<div class="ss-step-num">4</div>
+							<div class="ss-step-body"><strong>Build a Specific To-Do List</strong>
+
+								<p>A daily to-do list takes the guesswork out of your study sessions. Use your course&#39;s pacing guide as your starting point and build specific tasks from there.</p>
+							</div></div></div></div>
+			</details>
+			<!-- 3. MANAGING DISTRACTIONS -->
+			<details>
+				<summary>Managing Distractions</summary>
+				<div class="accordion-body">
+					<div class="callout">
+						<div class="callout-label">Know Your Enemy</div>
+
+						<p>Time management&#39;s greatest enemy is distraction. Whether it&#39;s social media, messages, or friends &mdash; distractions will always compete for your attention. You have to actively manage them.</p>
+					</div>
+					<div class="ss-sub-tabs" id="ssDistractTabs">
+						<button class="ss-sub-tab ss-active" data-sspanel="ssp-unplug">Unplug</button>
+						<button class="ss-sub-tab" data-sspanel="ssp-noise">Remove the Noise</button>
+						<button class="ss-sub-tab" data-sspanel="ssp-status">Manage Your Status</button>
+					</div>
+					<div class="ss-sub-panel ss-active" id="ssp-unplug">
+
+						<ul>
+							<li>Exit all social media apps on your computer and phone before studying.</li>
+							<li>Turn your phone fully off &mdash; not just vibrate or silent. If it&#39;s visible, you&#39;ll check it.</li>
+							<li>Those notifications will still be there when you&#39;re done. Every check-in interrupts your thought process and harms your ability to learn.</li>
+						</ul>
+					</div>
+					<div class="ss-sub-panel" id="ssp-noise">
+
+						<ul>
+							<li>Research shows we are most productive when our environment is silent &mdash; even if you think you focus better with music or TV in the background.</li>
+							<li>Try working in complete silence for a few days. You may get significantly more done in less time.</li>
+							<li>If silence is genuinely difficult, try ambient or instrumental music without lyrics.</li>
+						</ul>
+					</div>
+					<div class="ss-sub-panel" id="ssp-status">
+
+						<ul>
+							<li>Before sitting down to study, let everyone around you know you&#39;re unavailable &mdash; physically tell family members, not just hoping they&#39;ll figure it out.</li>
+							<li>Update your messaging apps to &quot;away&quot; or &quot;do not disturb&quot; so friends know not to expect a response.</li>
+							<li>Being clear about your availability ahead of time prevents interruptions and builds respect for your study time.</li>
+						</ul>
+					</div></div>
+			</details>
+			<!-- 4. PROCRASTINATION -->
+			<details>
+				<summary>Procrastination</summary>
+				<div class="accordion-body">
+					<div class="callout">
+						<div class="callout-label">Your Best Defense</div>
+
+						<p>Implementing all of your time management strategies is your single best protection against procrastinating. Being prepared and committed from day one goes a long, long way.</p>
+					</div>
+					<div class="ss-cards">
+						<div class="ss-card">
+							<div class="ss-tag">When you feel overwhelmed</div>
+
+							<h4>Chunk Large Tasks</h4>
+
+							<p>Break big assignments into several smaller, manageable steps. A large task feels impossible; a first step feels doable.</p>
+							<div class="ss-example">Instead of &quot;write the whole essay,&quot; start with &quot;write just the outline tonight.&quot;</div></div>
+						<div class="ss-card">
+							<div class="ss-tag">When the list is too long</div>
+
+							<h4>Do the Easy Tasks First</h4>
+
+							<p>Tackle your easiest items first to build momentum and a sense of accomplishment that carries you forward.</p>
+							<div class="ss-example">Start with a short reading response before tackling the longer project section.</div></div>
+						<div class="ss-card">
+							<div class="ss-tag">When you feel isolated</div>
+
+							<h4>Work with Others</h4>
+
+							<p>Find a classmate or friend to study alongside &mdash; in person or virtually. Knowing someone else is working keeps you accountable.</p>
+							<div class="ss-example">Schedule a weekly video call study session with a CVA classmate.</div></div></div></div>
+			</details>
+			<!-- 5. GETTING ORGANIZED -->
+			<details>
+				<summary>Getting Organized</summary>
+				<div class="accordion-body">
+
+					<h2 style="font-size:26px; color:#bb0000; margin:0 0 8px 0; font-weight:900;">Creating a Manageable Workspace</h2>
+
+					<p>Your workspace does not have to be perfect. It just needs to help you focus, stay organized, and get your work done. In an online class, even a few small changes can make it easier to learn.</p>
+					<div class="callout" style="margin-top:14px;">
+						<div class="callout-label">Big Idea</div>
+
+						<p>A good workspace is not about having a fancy setup. It is about creating a space that helps you concentrate, stay organized, and do your best work. Also, create a dedicated folder for your CVA course. Organize files by unit or week. Set up a stable internet connection and back up your work using cloud storage.</p>
+					</div>
+
+					<h3 style="font-size:22px; color:#000000; margin:20px 0 10px 0; font-weight:900;">Three Simple Ways to Set Yourself Up for Success</h3>
+
+					<p style="margin-bottom:16px;">These simple habits can make your workspace more manageable.</p>
+					<div class="ss-cards">
+						<div class="ss-card">
+
+							<h4>Choose a Place to Focus</h4>
+
+							<p>Find a space where you can pay attention and work without constant interruptions. It does not need to be perfect. It just needs to work for you.</p>
+						</div>
+						<div class="ss-card">
+
+							<h4>Reduce Distractions</h4>
+
+							<p>Silence notifications, move your phone away, and turn off anything that makes it harder to stay focused.</p>
+						</div>
+						<div class="ss-card">
+
+							<h4>Have Your Materials Ready</h4>
+
+							<p>Before you begin, gather what you need such as your computer, charger, notebook, pencil, or headphones so you can stay on task.</p>
+						</div></div>
+					<div class="callout">
+						<div class="callout-label">What Makes a Workspace Manageable?</div>
+
+						<p>Click each item below to explore features that can help make a workspace more manageable for learning.</p>
+					</div>
+					<div class="nested-accordion">
+						<details>
+							<summary>A place where you can focus</summary>
+							<div class="nested-body">Your workspace does not need to be perfect. It simply needs to be a place where you can pay attention and avoid constant interruptions.</div>
+						</details>
+						<details>
+							<summary>Fewer distractions</summary>
+							<div class="nested-body">Phones, TV, and social media can quickly pull your attention away from your work. Small changes, like silencing notifications or moving your phone away, can help a lot.</div>
+						</details>
+						<details>
+							<summary>Materials ready to go</summary>
+							<div class="nested-body">It helps to have your computer, charger, notebook, pencil, headphones, and class materials nearby before you begin so you can stay on task.</div>
+						</details>
+						<details>
+							<summary>Comfortable enough to work</summary>
+							<div class="nested-body">Good lighting, a place to sit, and enough room to work can make a big difference in how well you focus.</div>
+						</details>
+						<details>
+							<summary>Flexibility when home is busy</summary>
+							<div class="nested-body">Not every student has a perfectly quiet home. If your space is shared or noisy, try using headphones, choosing a calmer spot, or working at a quieter time of day.</div>
+						</details>
+						<details>
+							<summary>A space connected to learning</summary>
+							<div class="nested-body">When you regularly work in the same place, it becomes easier to settle in and get started because your brain begins to connect that space with schoolwork.</div>
+						</details>
+					</div>
+					<div class="callout" style="margin-top:14px;">
+						<div class="callout-label">The Three-Word Framework</div>
+
+						<p>When trying to stay organized in an online course, always remember: <strong>Preview, View, and Review.</strong></p>
+					</div>
+					<div class="ss-pvr">
+						<div class="ss-pvr-card">
+							<div class="ss-pvr-letter">P</div>
+							<div class="ss-pvr-word">Preview</div>
+
+							<p class="ss-pvr-desc">Survey the entire course first. Note all major tests, papers, and projects. Plan ahead so nothing catches you off guard.</p>
+						</div>
+						<div class="ss-pvr-card">
+							<div class="ss-pvr-letter">V</div>
+							<div class="ss-pvr-word">View</div>
+
+							<p class="ss-pvr-desc">Do the work. Keep up with assignments consistently. Catching up in an online class is much harder than staying current.</p>
+						</div>
+						<div class="ss-pvr-card">
+							<div class="ss-pvr-letter">R</div>
+							<div class="ss-pvr-word">Review</div>
+
+							<p class="ss-pvr-desc">Keep good notes and have all course materials accessible. Regularly review what you&#39;ve covered.</p>
+						</div></div>
+					<div class="callout">
+						<div class="callout-label">Tackling Each Assignment</div>
+
+						<p>Use this three-step approach every time you sit down with a new assignment.</p>
+					</div>
+					<div class="ss-assign">
+						<div class="ss-assign-card">
+							<div class="ss-assign-icon">👀</div><strong>Skim It</strong>
+
+							<p>Before starting, skim the whole assignment to understand what it&#39;s asking and what you&#39;ll produce.</p>
+						</div>
+						<div class="ss-assign-card">
+							<div class="ss-assign-icon">📖</div><strong>Be Careful</strong>
+
+							<p>Read all instructions and notes carefully. List every task that needs to be completed before you start.</p>
+						</div>
+						<div class="ss-assign-card">
+							<div class="ss-assign-icon">✅</div><strong>Check It Off</strong>
+
+							<p>As you finish each component, check it off your list. Confirm all steps are done before submitting.</p>
+						</div></div></div>
+			</details>
+		</div></div>
+	<hr class="divider">
+	<!-- SUPPORT TEAM -->
+	<div class="guide-section" id="support">
+
+		<p class="section-eyebrow">You&#39;re Not Alone</p>
+
+		<h2 class="section-h2">Ask the Right Person</h2>
+
+		<p class="section-lead">When you have a question, the fastest way to get help is by contacting the <strong>right person</strong>. Most questions about your class should go to your <strong>teacher</strong>, while questions about scheduling or graduation progress should go to your <strong>school counselor</strong>.</p>
+		<div class="support-card">
+			<div class="support-badge">Teacher</div>
+
+			<h3>Questions about your class?</h3>
+
+			<p><strong style="color:#bb0000;">Your teacher is the first person to contact for anything related to the class itself.</strong></p>
+			<div class="support-list-box">
+
+				<h4>Contact your teacher for:</h4>
+
+				<ul>
+					<li>Clarifying assignment directions</li>
+					<li>Explaining feedback on a submitted assignment</li>
+					<li>Helping you understand a skill or concept</li>
+					<li>Answering questions about due dates or grading</li>
+					<li>Time management and organization</li>
+					<li>Getting caught up if you fall behind</li>
+					<li>Check-ins when you are struggling</li>
+					<li>Academic success strategies</li>
+				</ul>
+			</div></div>
+		<div class="support-card">
+			<div class="support-badge">School Counselor</div>
+
+			<h3>Planning ahead?</h3>
+
+			<p>Your school counselor helps with the bigger academic picture, including scheduling, credits, and graduation progress.</p>
+			<div class="support-list-box">
+
+				<h4>Contact your counselor for:</h4>
+
+				<ul>
+					<li>Course scheduling</li>
+					<li>Graduation requirements</li>
+					<li>Credit checks and transcripts</li>
+					<li>College and career planning</li>
+				</ul>
+			</div></div>
+		<div class="white-panel" style="border-left:6px solid #bb0000; border-radius:14px; margin-top:16px;">
+
+			<p><strong>The most important thing is that you must be willing to reach out to your CVA instructor. Many students hesitate, but your success genuinely depends on it. Instructors want to hear from you.</strong></p>
+		</div></div>
+	<!-- FOOTER -->
+	<div class="page-footer">
+		<div class="tagline">CLASS. VIRTUALLY. ANYWHERE.</div></div></div>
+<!-- /page-wrap -->
+<script>
+	/* ═══ QUIZ DATA ═══ */
+	var CATEGORIES = [
+	{
+		id: 'tech',
+		title: 'Technology Skills',
+		number: 'Category 1 of 8',
+		desc: 'Your ability to use computers, software, and online tools.',
+		question: 'How would you describe your comfort and ability with the technology needed for online learning?',
+		options: [
+		{
+			score: 1,
+			text: 'I have limited experience with computers or online platforms. I often need help completing basic tasks like sending email, creating documents, or navigating websites.'
+		},
+		{
+			score: 2,
+			text: 'I can handle basic computer tasks on my own, but I struggle with some online tools or course platforms. I\'m working on getting more comfortable.'
+		},
+		{
+			score: 3,
+			text: 'I\'m comfortable using most technology for learning — email, documents, and online platforms. I occasionally need help with less familiar tools.'
+		},
+		{
+			score: 4,
+			text: 'I\'m confident using a wide range of technology tools for learning. I can troubleshoot common issues and adapt quickly to new platforms or software.'
+		}]
+	},
+	{
+		id: 'study',
+		title: 'Work & Study Habits',
+		number: 'Category 2 of 8',
+		desc: 'How you organize your time, assignments, and academic responsibilities.',
+		question: 'How would you describe your work and study habits when learning independently?',
+		options: [
+		{
+			score: 1,
+			text: 'I often miss deadlines, forget assignments, or wait until the last minute. I rely on teachers and parents to keep me on track.'
+		},
+		{
+			score: 2,
+			text: 'I try to stay organized but sometimes fall behind when I don\'t have someone checking on me. I\'m still developing consistent study habits.'
+		},
+		{
+			score: 3,
+			text: 'I usually complete my work on time and have a basic routine. I do better with some reminders but can manage most responsibilities on my own.'
+		},
+		{
+			score: 4,
+			text: 'I consistently manage my assignments, meet deadlines, and maintain strong study habits — even without direct supervision. I proactively plan and stay organized.'
+		}]
+	},
+	{
+		id: 'learning',
+		title: 'Learning Style',
+		number: 'Category 3 of 8',
+		desc: 'How you best take in and process information.',
+		question: 'How well does your learning style match an online, self-directed environment?',
+		options: [
+		{
+			score: 1,
+			text: 'I learn best through direct instruction and hands-on activities in a classroom. Reading and working independently for extended periods is very difficult for me.'
+		},
+		{
+			score: 2,
+			text: 'I can learn from reading and online materials, but I struggle to stay engaged without a teacher present. I\'m working on more independent learning strategies.'
+		},
+		{
+			score: 3,
+			text: 'I\'m comfortable with a mix of independent reading, videos, and online activities. I manage well most of the time but still appreciate some structure and guidance.'
+		},
+		{
+			score: 4,
+			text: 'I thrive with self-directed learning. I\'m an active learner who reads carefully, watches instructional content, engages with online materials, and seeks out resources when needed.'
+		}]
+	},
+	{
+		id: 'connectivity',
+		title: 'Technology & Connectivity',
+		number: 'Category 4 of 8',
+		desc: 'Your access to reliable devices and internet at home and at school.',
+		question: 'How would you describe your access to technology and reliable internet for coursework?',
+		options: [
+		{
+			score: 1,
+			text: 'I don\'t have consistent access to a computer or reliable internet at home. I would struggle to complete online coursework outside of school.'
+		},
+		{
+			score: 2,
+			text: 'I have some access — either at school or a shared device at home — but it\'s not always available when I need it.'
+		},
+		{
+			score: 3,
+			text: 'I have access to a device and internet most of the time. Occasional connection issues might arise, but I can usually find a solution.'
+		},
+		{
+			score: 4,
+			text: 'I have consistent access to a reliable computer and fast internet at home and/or at school. Technology access will not be a barrier for me.'
+		}]
+	},
+	{
+		id: 'time',
+		title: 'Time Management',
+		number: 'Category 5 of 8',
+		desc: 'Your ability to allocate and protect time for coursework.',
+		question: 'How well do you manage your time across school, work, activities, and personal responsibilities?',
+		options: [
+		{
+			score: 1,
+			text: 'I have difficulty managing my time and often feel overwhelmed. I struggle to carve out regular study time when other responsibilities compete for my attention.'
+		},
+		{
+			score: 2,
+			text: 'I try to manage my time but find it hard to stick to a schedule consistently. I sometimes run out of time for important tasks.'
+		},
+		{
+			score: 3,
+			text: 'I generally manage my time well and can usually find time for coursework. I may need to make some adjustments to fit an online course into my current schedule.'
+		},
+		{
+			score: 4,
+			text: 'I\'m skilled at time management. I use a planner or schedule, protect time for academic work, and balance multiple responsibilities without letting things slip.'
+		}]
+	},
+	{
+		id: 'motivation',
+		title: 'Interest & Motivation',
+		number: 'Category 6 of 8',
+		desc: 'Your drive to succeed and your reasons for taking an online course.',
+		question: 'How would you describe your motivation for taking this online course and your commitment to completing it?',
+		options: [
+		{
+			score: 1,
+			text: 'I\'m not sure why I\'m taking this course or whether I really want to. I don\'t have a clear goal, and I\'m not confident I\'ll stick with it if it gets hard.'
+		},
+		{
+			score: 2,
+			text: 'I have some interest, but my motivation comes and goes. I worry I might give up or lose focus when the course becomes challenging.'
+		},
+		{
+			score: 3,
+			text: 'I have a clear reason for taking this course and I\'m genuinely interested in the content. I\'m likely to stay motivated, though I may need occasional encouragement.'
+		},
+		{
+			score: 4,
+			text: 'I have a strong, personal reason for completing this course — a graduation goal, college plans, or a career interest. My motivation is high and I\'m committed to seeing it through.'
+		}]
+	},
+	{
+		id: 'reading',
+		title: 'Reading & Writing Skills',
+		number: 'Category 7 of 8',
+		desc: 'Your foundational academic literacy skills for online coursework.',
+		question: 'How would you describe your reading comprehension and written communication skills?',
+		options: [
+		{
+			score: 1,
+			text: 'I struggle significantly with reading assigned texts and expressing my ideas clearly in writing. These challenges would make online learning very difficult for me.'
+		},
+		{
+			score: 2,
+			text: 'My reading and writing skills are developing, but I sometimes have trouble with complex texts or communicating my ideas clearly. I\'d likely need additional support.'
+		},
+		{
+			score: 3,
+			text: 'I read and write at or near grade level. I can handle most course texts and express my ideas reasonably well, though complex assignments sometimes challenge me.'
+		},
+		{
+			score: 4,
+			text: 'I\'m a strong reader and writer. I can comprehend academic texts, analyze information, and communicate ideas clearly and effectively.'
+		}]
+	},
+	{
+		id: 'support',
+		title: 'Support Services Awareness',
+		number: 'Category 8 of 8',
+		desc: 'Knowing who to ask for help and being willing to reach out.',
+		question: 'How comfortable are you reaching out to teachers, mentors, and support staff when you need help?',
+		options: [
+		{
+			score: 1,
+			text: 'I rarely or never ask for help, even when I\'m confused or falling behind. I\'m not sure who to contact if I have a problem with my online course.'
+		},
+		{
+			score: 2,
+			text: 'I sometimes ask for help, but it takes me a while to reach out. I\'m not always sure who the right person to contact is.'
+		},
+		{
+			score: 3,
+			text: 'I know who my support contacts are and I\'ll reach out when things get difficult. I\'m still building confidence in advocating for myself.'
+		},
+		{
+			score: 4,
+			text: 'I\'m comfortable and proactive about seeking help. I know who my instructor, mentor, and counselor are, and I won\'t hesitate to contact them when I have a question or problem.'
+		}]
+	}];
+
+	var BANDS = [
+	{
+		min: 8,
+		max: 14,
+		cls: 'not-ready',
+		label: 'Not Quite Ready Yet',
+		desc: 'Your results suggest you may need more preparation before jumping into an online course. That\'s completely okay — knowing this now gives you time to build the skills and habits that lead to success. Talk with your counselor about a plan.',
+		tip: 'Focus on one or two areas at a time. Consider an orientation course or enrichment program over the summer to build confidence before enrolling in a credit-bearing class.',
+		tipLabel: 'Building Your Path'
+	},
+	{
+		min: 15,
+		max: 20,
+		cls: 'almost',
+		label: 'Almost Ready',
+		desc: 'You have some of the key ingredients for online success, but there are a few areas to strengthen before you enroll. With the right support and some focused preparation, you can get there.',
+		tip: 'Review the categories where you scored lowest. Talk with your mentor or counselor about strategies in those specific areas. Consider starting with just one online course.',
+		tipLabel: 'Strengthen These Areas'
+	},
+	{
+		min: 21,
+		max: 27,
+		cls: 'getting-there',
+		label: 'Getting There!',
+		desc: 'You\'re showing solid readiness for online learning! You have most of the habits, skills, and mindset needed. A few areas could use some attention, but you\'re well-positioned to succeed.',
+		tip: 'Identify your one or two lower-scoring categories and make a plan before your course begins. Set up your workspace and create a weekly schedule before day one.',
+		tipLabel: 'Finish Line Is Close'
+	},
+	{
+		min: 28,
+		max: 32,
+		cls: 'ready',
+		label: 'Ready for Online Learning!',
+		desc: 'Excellent! Your results indicate strong readiness for the demands of online coursework at CVA. You have the habits, skills, technology access, and motivation to succeed.',
+		tip: 'You\'re in great shape! Set up your study space, introduce yourself to your instructor early, and establish your weekly schedule before day one.',
+		tipLabel: 'You\'re Set — Here\'s Your Next Step'
+	}];
+
+	var LEVEL_LABELS = ['', 'Not Ready', 'Almost Ready', 'Getting There', 'Ready'];
+	var LEVEL_CLS = ['', 'lbl-1', 'lbl-2', 'lbl-3', 'lbl-4'];
+	var FILL_CLS = ['', 'fill-1', 'fill-2', 'fill-3', 'fill-4'];
+	var currentQ = 0, answers = new Array(CATEGORIES.length).fill(null);
+
+	function buildDots()
+	{
+		var d = document.getElementById('quizDots'); d.innerHTML = '';
+		CATEGORIES.forEach(function(_, i)
+		{
+			var dot = document.createElement('div'); dot.className = 'quiz-dot';
+			dot.id = 'dot' + i; d.appendChild(dot);
+		});
+	}
+
+	function updateDots()
+	{
+		CATEGORIES.forEach(function(_, i)
+		{
+			var d = document.getElementById('dot' + i); d.classList.remove('answered', 'current'); if (i === currentQ) d.classList.add('current');
+				else
+			if (answers[i] !== null) d.classList.add('answered');
+		});
+	}
+
+	function renderQuestion(idx)
+	{
+		var cat = CATEGORIES[idx];
+		document.getElementById('progressText').textContent = cat.number;
+		var pct = Math.round(answers.filter(function(a)
+		{
+			return a !== null;
+		}).length / CATEGORIES.length * 100);
+		document.getElementById('progressPct').textContent = pct + '% complete';
+		document.getElementById('progressFill').style.width = pct + '%';
+		document.getElementById('catNumber').textContent = cat.number;
+		document.getElementById('catTitle').textContent = cat.title;
+		document.getElementById('catDesc').textContent = cat.desc;
+		document.getElementById('questionText').textContent = cat.question;
+		var c = document.getElementById('optionsContainer'); c.innerHTML = '';
+		cat.options.forEach(function(opt, oi)
+		{
+			var btn = document.createElement('button'); btn.className = 'quiz-option' + (answers[idx] === oi ? ' selected' : ''); btn.textContent = opt.text; btn.addEventListener('click', function()
+			{
+				selectOption(idx, oi);
+			}); c.appendChild(btn);
+		});
+		updateNavButtons(); updateDots(); sendHeight();
+	}
+
+	function selectOption(qIdx, optIdx)
+	{
+		answers[qIdx] = optIdx; document.querySelectorAll('.quiz-option').forEach(function(b, i)
+		{
+			b.classList.toggle('selected', i === optIdx);
+		}); updateNavButtons(); var pct = Math.round(answers.filter(function(a)
+		{
+			return a !== null;
+		}).length / CATEGORIES.length * 100); document.getElementById('progressPct').textContent = pct + '% complete';
+		document.getElementById('progressFill').style.width = pct + '%';
+		updateDots();
+	}
+
+	function updateNavButtons()
+	{
+		var prev = document.getElementById('btnPrev'), next = document.getElementById('btnNext'), finish = document.getElementById('btnFinish'), skip = document.getElementById('btnSkip'); prev.disabled = (currentQ === 0); var isLast = (currentQ === CATEGORIES.length - 1), allDone = answers.every(function(a)
+			{
+				return a !== null;
+			}); if (isLast)
+			{
+				next.style.display = 'none';
+				finish.style.display = answers[currentQ] !== null ? 'inline-block' : 'none';
+				skip.style.display = 'none';
+			}
+			else
+			{
+				next.style.display = 'inline-block';
+				next.disabled = answers[currentQ] === null; finish.style.display = allDone ? 'inline-block' : 'none';
+				skip.style.display = answers[currentQ] === null ? 'inline-block' : 'none';
+			}
+	}
+
+	function quizNav(dir)
+	{
+		currentQ = Math.max(0, Math.min(CATEGORIES.length - 1, currentQ + dir)); renderQuestion(currentQ);
+	}
+
+	function quizSkip()
+	{
+		quizNav(1);
+	}
+
+	function showResults()
+	{
+		['catHeader', 'questionText', 'optionsContainer', 'quizDots'].forEach(function(id)
+		{
+			document.getElementById(id).style.display = 'none';
+		});
+		document.querySelector('.quiz-nav-row').style.display = 'none';
+		document.getElementById('progressFill').style.width = '100%';
+		document.getElementById('progressPct').textContent = '100% complete';
+		document.getElementById('progressText').textContent = 'Assessment Complete';
+		var total = answers.reduce(function(s, a, i)
+		{
+			return s + (a !== null ? CATEGORIES[i].options[a].score : 1);
+		}, 0);
+		var band = BANDS[BANDS.length - 1];
+		for (var b = 0; b < BANDS.length; b++)
+		{
+			if (total >= BANDS[b].min && total <= BANDS[b].max)
+			{
+				band = BANDS[b];
+				break;
+			}
+		}
+		document.getElementById('resultsBand').className = 'result-band ' + band.cls;
+		document.getElementById('resultsScoreNum').textContent = total + '/32';
+		document.getElementById('resultsLabel').textContent = band.label;
+		document.getElementById('resultsDesc').textContent = band.desc;
+		document.getElementById('resultsTipLabel').textContent = band.tipLabel;
+		document.getElementById('resultsTipText').textContent = band.tip;
+		var grid = document.getElementById('breakdownGrid'); grid.innerHTML = '';
+		CATEGORIES.forEach(function(cat, i)
+		{
+			var score = answers[i] !== null ? cat.options[answers[i]].score : 1; var pct = ((score - 1) / 3) * 100; var row = document.createElement('div'); row.className = 'breakdown-row';
+			row.innerHTML = '<div class="breakdown-cat">' + cat.title + '</div><div class="bar-bg"><div class="bar-fill ' + FILL_CLS[score] + '" style="width:' + pct + '%"></div></div><div class="breakdown-lbl ' + LEVEL_CLS[score] + '">' + LEVEL_LABELS[score] + '</div>';
+			grid.appendChild(row);
+		});
+		document.getElementById('quizResults').style.display = 'block';
+		sendHeight();
+	}
+
+	function retakeQuiz()
+	{
+		answers = new Array(CATEGORIES.length).fill(null); currentQ = 0;['catHeader', 'questionText', 'optionsContainer', 'quizDots'].forEach(function(id)
+		{
+			document.getElementById(id).style.display = '';
+		}); document.querySelector('.quiz-nav-row').style.display = '';
+		document.getElementById('quizResults').style.display = 'none';
+		document.getElementById('progressFill').style.width = '0%';
+		renderQuestion(0); sendHeight();
+	}
+
+	/* ═══ DISTRACTION SUB-TABS ═══ */
+	function initDistractTabs()
+	{
+		document.querySelectorAll('#ssDistractTabs .ss-sub-tab').forEach(function(btn)
+		{
+			btn.addEventListener('click', function()
+			{
+				document.querySelectorAll('#ssDistractTabs .ss-sub-tab').forEach(function(b)
+				{
+					b.classList.remove('ss-active');
+				});
+				document.querySelectorAll('.ss-sub-panel').forEach(function(p)
+				{
+					p.classList.remove('ss-active');
+				});
+				btn.classList.add('ss-active');
+				document.getElementById(btn.dataset.sspanel).classList.add('ss-active');
+			});
+		});
+	}
+
+	/* ═══ SCROLL NAV HIGHLIGHT ═══ */
+	function initScrollNav()
+	{
+		var sections = document.querySelectorAll('[id]');
+		var links = document.querySelectorAll('.top-nav a');
+		window.addEventListener('scroll', function()
+		{
+			var cur = '';
+			sections.forEach(function(s)
+			{
+				if (window.scrollY >= s.offsetTop - 80) cur = s.id;
+			}); links.forEach(function(a)
+			{
+				a.classList.remove('active'); if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+			});
+		});
+	}
+
+	/* ═══ HEIGHT REPORTING ═══ */
+	var sendHeightTimer = null;
+	function sendHeight()
+	{
+		clearTimeout(sendHeightTimer); sendHeightTimer = setTimeout(function()
+		{
+			var h = Math.ceil(document.body.offsetHeight) + 40;
+			try
+			{
+				window.parent.postMessage(
+				{
+					iframeHeight: h
+				}, '*');
+			}
+			catch (e)
+			{}
+			try
+			{
+				window.parent.document.getElementById('readinessFrame').style.height = h + 'px';
+			}
+			catch (e)
+			{}
+		}, 150);
+	}
+	window.addEventListener('load', sendHeight);
+	window.addEventListener('resize', sendHeight);
+
+	/* ═══ SAFE INIT ═══ */
+	function init()
+	{
+		if (!document.getElementById('catTitle'))
+		{
+			setTimeout(init, 50); return;
+		}
+		document.getElementById('btnPrev').addEventListener('click', function()
+		{
+			quizNav(-1);
+		});
+		document.getElementById('btnNext').addEventListener('click', function()
+		{
+			quizNav(1);
+		});
+		document.getElementById('btnSkip').addEventListener('click', function()
+		{
+			quizSkip();
+		});
+		document.getElementById('btnFinish').addEventListener('click', function()
+		{
+			showResults();
+		});
+		document.getElementById('btnRetake').addEventListener('click', function()
+		{
+			retakeQuiz();
+		});
+		buildDots(); renderQuestion(0);
+		initDistractTabs();
+		initScrollNav();
+	}
+	if (document.readyState === 'loading')
+	{
+		document.addEventListener('DOMContentLoaded', init);
+	}
+	else
+	{
+		init();
+	}
+
+</script>
